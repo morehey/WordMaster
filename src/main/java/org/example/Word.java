@@ -20,11 +20,10 @@ public class Word {
         String slevel = "";
         for (int i = 0; i < level; i++)
             slevel += "*";
-        String str = String.format("%-3s", slevel)
+
+        return String.format("%-3s", slevel)
                 + String.format("%15s", word)
                 + "  " + meaning;
-
-        return str;
     }
 
     public int getId() {
