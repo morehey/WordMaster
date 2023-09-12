@@ -114,6 +114,13 @@ public class WordCRUD implements ICRUD{
         listAll(keyword);
     }
 
+    public void searchLevel() {
+        System.out.println("=> 원하는 레벨은? (1~3) ");
+        int level = s.nextInt();
+        listAll(level);
+    }
+
+
     public void loadFile() {
         try {
             BufferedReader br = new BufferedReader(new FileReader(fname));
