@@ -26,6 +26,10 @@ public class Word {
                 + "  " + meaning;
     }
 
+    public String toFileString() {
+        return this.level + "|" + this.word + "|" + this.meaning;
+    }
+
     public int getId() {
         return id;
     }

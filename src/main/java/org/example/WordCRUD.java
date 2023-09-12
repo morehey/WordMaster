@@ -1,11 +1,13 @@
 package org.example;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WordCRUD implements ICRUD{
     ArrayList<Word> list;
     Scanner s;
+    final String fname = "Dictionary.txt";
     WordCRUD(Scanner s) {
         list = new ArrayList<>();
         this.s = s;
@@ -63,6 +65,18 @@ public class WordCRUD implements ICRUD{
         return idlist;
     }
 
+    public void listAll(int level) {
+        int j = 0;
+        System.out.println("---------------------------------");
+        for (int i = 0; i < list.size(); i++) {
+            int ilevel = list.get(i).getLevel();
+            if(ilevel != level) continue;
+            System.out.print((j+1) + " ");
+            System.out.println(list.get(i).toString());
+            j++;
+        }
+        System.out.println("---------------------------------");
+    }
     public void updateItem() {
         System.out.println("=> 수정할 단어 검색 : ");
         String keyword = s.next();
@@ -88,12 +102,18 @@ public class WordCRUD implements ICRUD{
         System.out.println("=> 정말로 삭제하시겠습니까?(Y/n) : ");
         String ans = s.next();
         if(ans.equalsIgnoreCase("y")) {
-            list.remove(idlist.get(id-1));
+            list.remove((int)idlist.get(id-1));
             System.out.println("단어가 삭제되었습니다.");
         } else
             System.out.println("취소되었습니다.");
     }
 
     public void searchItem() {
+        System.out.print("=> 원하는 단어는? ");
+        String keyword = s.next();
+        listAll(keyword);
     }
+
+
+
 }

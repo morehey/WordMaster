@@ -9,6 +9,7 @@ public class WordManager {
         wordCRUD = new WordCRUD(s);
     }
     public int selectMenu() {
+
         System.out.print("*** 영단어 마스터 ***\n"
                          + "********************\n"
                          + "1. 모든 단어 보기\n"
@@ -25,12 +26,15 @@ public class WordManager {
         return s.nextInt();
     }
     public void start() {
+
+
         while(true) {
             int menu = selectMenu();
             if (menu == 0) break;
             if (menu == 1) {
                 wordCRUD.listAll();
             }
+
             else if (menu == 3) {
                 wordCRUD.searchItem();
             }
