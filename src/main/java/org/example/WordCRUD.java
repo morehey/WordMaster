@@ -138,4 +138,19 @@ public class WordCRUD implements ICRUD{
         }
     }
 
+    public void saveFile() {
+        try {
+            PrintWriter pr = new PrintWriter(new FileWriter(fname));
+            int count = 0;
+            for (Word one : list) {
+                pr.write(one.toFileString() + "\n");
+                count++;
+            }
+            pr.close();
+            System.out.println("==> " + count + "개 데이터 저장 완료!");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
