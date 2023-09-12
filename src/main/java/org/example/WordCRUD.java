@@ -140,6 +140,8 @@ public class WordCRUD implements ICRUD{
             }
             br.close();
 
+            System.out.println("==> " + count + "개 데이터 입력 완료!");
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
