@@ -1,4 +1,4 @@
-1|apple|사과
 2|physical|물리적
 3|sophisticated|정교한
 1| library|도서관
+1| pretty|예쁜, 조금
